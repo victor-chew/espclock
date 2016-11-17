@@ -30,7 +30,6 @@ const int NTP_PACKET_SIZE = 48;
 const int NTP_CHECK_INTERVAL = 90; // How often to ping NTP server (seconds)
 const int CLOCK_DIFF_RANGE = 5; // If diff between clock and NTP time <= value, we consider them synchronized
 const String GOOGLE_API_URL = "https://maps.googleapis.com/maps/api/timezone/json?location=[loc]&timestamp=[ts]";
-const char* GOOGLE_API_CERT = "AD:B8:13:99:64:F5:75:F5:78:5C:FA:43:19:EA:8F:AF:2B:AE:54:FE";
 
 os_timer_t secTimer;
 WiFiUDP ntpPort;
@@ -178,7 +177,7 @@ bool convertLocalTime() {
 
   debug("HTTP GET: %s", url.c_str());
   HTTPClient http;
-  http.begin(url.c_str(), GOOGLE_API_CERT);
+  http.begin(url.c_str());
   int rc = http.GET();
   debug("HTTP return code: %d", rc);
 
