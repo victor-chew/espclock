@@ -34,7 +34,7 @@ const String GOOGLE_API_URL = "https://maps.googleapis.com/maps/api/timezone/jso
 os_timer_t secTimer;
 WiFiUDP ntpPort;
 byte packetBuffer[ NTP_PACKET_SIZE];
-bool shouldSaveConfig = false, tickOccured = false, ntpReplied = false, pulseAndWait = false;
+bool shouldSaveConfig = false, tickOccurred = false, ntpReplied = false, pulseAndWait = false;
 int clockHH = 0, clockMM = 0, clockSS = 0, ntpHH = 0, ntpMM = 0, ntpSS = 0, ntpCount = 0, ntpTime = 0, tickPin = D1;
 char loc[64] = "", clocktime[7];
 
@@ -158,7 +158,7 @@ void pulseSecondHand() {
 // Triggered by system timer every second
 void timerCallback(void *pArg) {
   os_intr_lock();
-  tickOccured = true;
+  tickOccurred = true;
   incClockTime(ntpHH, ntpMM, ntpSS);
   os_intr_unlock();
 }
@@ -381,8 +381,8 @@ void loop() {
   }
   
   // Until normal condition, this section should run every second
-  if (tickOccured) {
-    tickOccured = false;
+  if (tickOccurred) {
+    tickOccurred = false;
     ntpCount = (ntpCount + 1) % NTP_CHECK_INTERVAL;
     if (pulseAndWait) pulseSecondHand(); else incSecondHand();
   }  
