@@ -4,4 +4,4 @@
 ### Links:
 
 * [Project](https://hackaday.io/project/16742-espclock)
-* [Blog](http://rsequence.blogspot.com/2016/10/hacking-analog-clock-to-sync-with-ntp.html)
+* [Blog](https://www.randseq.org/2016/10/hacking-analog-clock-to-sync-with-ntp.html)
