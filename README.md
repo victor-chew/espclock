@@ -1,5 +1,5 @@
 # ESPCLOCK
-###### NTP-enbling a cheap $2 Ikea analog clock using ESP-12/NodeMCU/Arduino
+###### NTP-enabling a cheap $2 Ikea analog clock using ESP-12/NodeMCU/Arduino
 
 ### Links:
 
